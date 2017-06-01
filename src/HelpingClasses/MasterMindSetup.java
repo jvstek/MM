@@ -49,8 +49,7 @@ public class MasterMindSetup {
 	// double row needs additional logica when row is longer then standerd 4.
 	// so it is as is for the time being
 	public ArrayList<IShape> SetScorePins(int RowLength, int RowAmount) {
-		Point StartingPoint = new Point(xPosition + RowLength * (playFieldPinSize * 2) + playFieldPinSize,
-				yPostion);
+		Point StartingPoint = new Point(xPosition + RowLength * (playFieldPinSize * 2) + playFieldPinSize, yPostion);
 		return SetScoreRows(RowLength, RowAmount, StartingPoint);
 	}
 
@@ -80,7 +79,7 @@ public class MasterMindSetup {
 		int y = xPosition;
 		int x = yPostion - (int) (playFieldSecretSize * 2);
 		for (int i = 0; i < RowLength; i++) {
-			Unknown c = new Unknown(new Point(y, x), (int) playFieldSecretSize, MColors.GetMColor(0).GetColor(),i);
+			Unknown c = new Unknown(new Point(y, x), (int) playFieldSecretSize, MColors.GetMColor(0).GetColor(), i);
 			SecretShapes.add(c);
 			y = (int) (y + (int) ((playFieldSecretSize * 2)) + playFieldSecretMargin);
 		}
@@ -105,10 +104,10 @@ public class MasterMindSetup {
 		int y = (int) OfSet.getY();
 		int place = 0;
 		for (int i = 0; i < RowLength; i++) {
-			place = i; 
+			place = i;
 			Pin c = new Pin(new Point(x, y), playFieldPinSize, MColors.GetMColor(0).GetColor(), row, place);
 			rowshapes.add(c);
-			
+
 			x = (x + (playFieldPinSize * 2) + playFieldPinMargin);
 
 		}

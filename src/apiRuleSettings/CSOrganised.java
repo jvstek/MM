@@ -1,6 +1,6 @@
 package apiRuleSettings;
 
-public class CSOrganised  implements ICheckScore {
+public class CSOrganised implements ICheckScore {
 	private boolean[] secretChecked;
 	private int[] result;
 
@@ -9,6 +9,7 @@ public class CSOrganised  implements ICheckScore {
 		result = new int[placesInRow];
 	}
 
+	@Override
 	public int[] getScorePins(Iterable<Integer> secret, int[] attempt) {
 		prepareCheck();
 		checkBlack(secret, attempt);

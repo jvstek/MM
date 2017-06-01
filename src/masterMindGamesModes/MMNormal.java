@@ -2,13 +2,13 @@ package masterMindGamesModes;
 
 import HelpingClasses.MasterMindSettings;
 import HelpingClasses.SettingValidationError;
-import apiRuleSettings.CSOrganised; 
+import apiRuleSettings.CSOrganised;
 
-public class MMNormal extends MasterMind{
+public class MMNormal extends MasterMind {
 	@Override
 	public void newgame() {
 		try {
-			mms = new MasterMindSettings(7, 4, 9, 2, 0, 1, 4);
+			mms = new MasterMindSettings(7, 4, 10, 2, 0, 1, 4);
 			this.live = true;
 			SecretCode = sus.SetSecretCode(mms.getRowLenght(), mms.getSameColorAllowed(), mms.getPlaycolors());
 			ICS = new CSOrganised(mms.getRowLenght());

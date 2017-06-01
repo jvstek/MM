@@ -4,7 +4,7 @@ import HelpingClasses.MasterMindSettings;
 import HelpingClasses.SettingValidationError;
 import apiRuleSettings.CSRandom;
 
-public class MMHard extends MasterMind{
+public class MMHard extends MasterMind {
 	@Override
 	public void newgame() {
 		try {

@@ -13,6 +13,8 @@ import HelpingClasses.MColors;
 import HelpingClasses.MasterMindSetup;
 import masterMindGamesModes.IMasterMind;
 import masterMindGamesModes.MMEasy;
+import masterMindGamesModes.MMHard;
+import masterMindGamesModes.MMNormal;
 
 public class MastermindApi {
 
@@ -26,6 +28,7 @@ public class MastermindApi {
 	private int activePlace;
 	private int colorNumber;
 
+	// todo some settings
 	public MastermindApi(String t) {
 		mms = new MasterMindSetup();
 		canvasShapes = new ArrayList<IShape>();
@@ -34,9 +37,27 @@ public class MastermindApi {
 		colorNumber = 0;
 	}
 
+	public void StartHardGame() {
+		imm = new MMHard();
+		gameStarter(imm);
+	}
+
+	public void StartNormalGame() {
+		imm = new MMNormal();
+		gameStarter(imm);
+	}
+
 	public void StartEasyGame() {
-		ResetGui();
+		// ResetGui();
 		imm = new MMEasy();
+		gameStarter(imm);
+		// imm.newgame();
+		// SetupPlayField(imm);
+		// setSelectionPin(activeRow, activePlace, true);
+	}
+
+	private void gameStarter(IMasterMind IMm) {
+		ResetGui();
 		imm.newgame();
 		SetupPlayField(imm);
 		setSelectionPin(activeRow, activePlace, true);
@@ -46,16 +67,12 @@ public class MastermindApi {
 		colorNumber = 0;
 		activeRow = 0;
 		activePlace = 0;
-		CleanCanvas();
+		canvasShapes.clear();
 	}
 
 	public Iterable<IShape> getCircles() {
 		Iterable<IShape> cl = canvasShapes;
 		return cl;
-	}
-
-	private void CleanCanvas() {
-		canvasShapes.clear();
 	}
 
 	public void setActiveRow(int activeRow) {
@@ -83,7 +100,7 @@ public class MastermindApi {
 		}
 	}
 
-	public void setSelectedPin(Pin pin) {
+	private void setSelectedPin(Pin pin) {
 		if (pin.GetRow() == this.activeRow) {
 			setActivePin(activePlace, pin.GetPlace());
 			pin.SetColor(MColors.GetMColor(colorNumber).GetColor());
@@ -124,7 +141,6 @@ public class MastermindApi {
 	}
 
 	private Pin getPin(int row, int place) {
-
 		for (IShape p : canvasShapes) {
 			if (p instanceof Pin) {
 				if (((Pin) p).GetPlace() == place && ((Pin) p).GetRow() == row) {
@@ -136,7 +152,6 @@ public class MastermindApi {
 	}
 
 	public void CheckRow() {
-
 		// get collor for every pin in the row.
 		// check it
 		// set the scorepin colors
@@ -145,7 +160,9 @@ public class MastermindApi {
 				setScorePin(activeRow, imm.checkPlayPins(getColorNrRow(activeRow)));
 				if (imm.isLive()) {
 					setNextRow();
-				}else{ setUnknownCode( getColorNrRow(activeRow));}
+				} else {
+					setUnknownCode(getColorNrRow(activeRow));
+				}
 			} catch (Exception e) {
 				System.out.println("Little error " + e);
 			}
@@ -155,17 +172,19 @@ public class MastermindApi {
 		}
 
 	}
-	private void setUnknownCode(int[]colorsRow){
+
+	private void setUnknownCode(int[] colorsRow) {
 		for (IShape p : canvasShapes) {
 			if (p instanceof Unknown) {
-				for(int i =0;i<colorsRow.length;i++){
-					if(((Unknown) p).GetPlace() ==i){
+				for (int i = 0; i < colorsRow.length; i++) {
+					if (((Unknown) p).GetPlace() == i) {
 						((Unknown) p).SetColor(MColors.GetMColor(colorsRow[i]).GetColor());
-					} 
+					}
 				}
 			}
 		}
 	}
+
 	private void setNextRow() {
 		setSelectionPin(activeRow, activePlace, false);
 		activeRow++;

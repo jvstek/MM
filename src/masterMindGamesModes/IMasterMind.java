@@ -8,8 +8,9 @@ public interface IMasterMind {
 
 	public abstract void newgame();
 
-	public abstract int[] checkPlayPins(int[]colorValeus);
-	
+	public abstract int[] checkPlayPins(int[] colorValeus);
+
 	public abstract boolean isLive();
+
 	public abstract double getScore();
 }

@@ -12,43 +12,43 @@ import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
 import guiPackages.MastermindFrame;
- 
 
 public class GameBar {
-	public JMenuBar GameMenubar(MastermindFrame MmF)
-	{
+	public JMenuBar GameMenubar(MastermindFrame MmF) {
 		JMenuBar gameBar = new javax.swing.JMenuBar();
 		JMenu game = game(MmF);
-		JMenu MasterMindMenu= Menu("Mastermind",'M');
-		 
+		JMenu MasterMindMenu = Menu("Mastermind", 'M');
+
 		gameBar.add(game);
 		game.add(MasterMindMenu);
 		MasterMindMenu.add(addMenuItemEasy(MmF));
 		MasterMindMenu.add(addMenuItemNormal(MmF));
 		game.add(addMenuItemExit());
-		
-		gameBar.add(Menu("Settings",'S'));
-		 
+
+		gameBar.add(Menu("Settings", 'S'));
+
 		gameBar.add(score(MmF));
-		
+
 		gameBar.setVisible(true);
-		 return gameBar;
-	}  
-	
-	private JMenu Menu(String tekst,char hotkey){
+		return gameBar;
+	}
+
+	private JMenu Menu(String tekst, char hotkey) {
 		JMenu _menu = new javax.swing.JMenu();
 		_menu.setText(tekst);
 		_menu.setMnemonic(hotkey);
 		return _menu;
 	}
-	private JMenu game(MastermindFrame MmF){
-		JMenu game =  Menu("Game",'G');
-		game.addMenuListener(new MenuListener(){
+
+	private JMenu game(MastermindFrame MmF) {
+		JMenu game = Menu("Game", 'G');
+		game.addMenuListener(new MenuListener() {
 
 			@Override
 			public void menuSelected(MenuEvent e) {
 				MmF.MenuGameClicked();
-			} 
+			}
+
 			@Override
 			public void menuDeselected(MenuEvent e) {
 			}
@@ -56,18 +56,20 @@ public class GameBar {
 			@Override
 			public void menuCanceled(MenuEvent e) {
 			}
-			
-		}); 
+
+		});
 		return game;
 	}
-	private JMenu score(MastermindFrame MmF){
-		JMenu score = Menu("score",'C');
-		score.addMenuListener(new MenuListener(){
+
+	private JMenu score(MastermindFrame MmF) {
+		JMenu score = Menu("score", 'C');
+		score.addMenuListener(new MenuListener() {
 
 			@Override
 			public void menuSelected(MenuEvent e) {
 				MmF.MenuScoreClicked();
-			} 
+			}
+
 			@Override
 			public void menuDeselected(MenuEvent e) {
 			}
@@ -75,51 +77,53 @@ public class GameBar {
 			@Override
 			public void menuCanceled(MenuEvent e) {
 			}
-			
-		}); 
+
+		});
 		return score;
 	}
-	private JMenuItem addMenuItemEasy(MastermindFrame MmF){
+
+	private JMenuItem addMenuItemEasy(MastermindFrame MmF) {
 		JMenuItem menuItem = new javax.swing.JMenuItem();
 		menuItem.setText("Easy");
-		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, 0)); 
-		
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, 0));
+
 		menuItem.addActionListener(new ActionListener() {
-		      @Override
-			public void actionPerformed(ActionEvent e) { 
-		       MmF.MenuItemClicked(e);
-		        }
-		      });
-		
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MmF.MenuItemClicked(e);
+			}
+		});
+
 		return menuItem;
 	}
-	private JMenuItem addMenuItemNormal(MastermindFrame MmF){
+
+	private JMenuItem addMenuItemNormal(MastermindFrame MmF) {
 		JMenuItem _menuItem = new javax.swing.JMenuItem();
 		_menuItem.setText("Normal");
 		_menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, 0));
-	 
+
 		_menuItem.addActionListener(new ActionListener() {
-		      @Override
-			public void actionPerformed(ActionEvent e) { 
-		       MmF.MenuItemClicked(e);
-		        }
-		      });
-		
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MmF.MenuItemClicked(e);
+			}
+		});
+
 		return _menuItem;
 	}
-	
-	private JMenuItem addMenuItemExit(){	
+
+	private JMenuItem addMenuItemExit() {
 		JMenuItem menuItem = new javax.swing.JMenuItem();
 		menuItem.setText("Exit");
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 1));
 		menuItem.addActionListener(new ActionListener() {
-		      @Override
+			@Override
 			public void actionPerformed(ActionEvent e) {
-		          System.out.println("Exit performed");
-		          //Game.this.dispose();
-		          System.exit(0);
-		        }
-		      });
+				System.out.println("Exit performed");
+				// Game.this.dispose();
+				System.exit(0);
+			}
+		});
 		return menuItem;
 	}
 }

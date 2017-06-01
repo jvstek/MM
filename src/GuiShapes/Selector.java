@@ -10,9 +10,10 @@ public class Selector extends Circle {
 		super(center, radius, color);
 		// TODO Auto-generated constructor stub
 	}
+
 	@Override
 	public void Draw(Graphics g, float sizeY, float sizeX) {
-		g.setColor(color); 
+		g.setColor(color);
 		int ox = (int) Calculate(x, sizeX);
 		int oy = (int) Calculate(y, sizeY);
 		int diameterx = (int) Calculate(diameter, sizeX);
@@ -22,12 +23,14 @@ public class Selector extends Circle {
 					(int) (diameterx + Calculate(7, sizeX)), (int) (diametery + Calculate(7, sizeY)));
 		} else {
 			g.fillOval(ox, oy, diameterx, diametery);
-		}  
+		}
 	}
+
 	@Override
-	public void OnHover( ) {
+	public void OnHover() {
 		// todo this is a color to select fil in a pin
-}
+	}
+
 	public Color GetColor() {
 		return this.color;
 	}

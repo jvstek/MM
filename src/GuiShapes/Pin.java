@@ -6,9 +6,10 @@ import java.awt.Point;
 
 public class Pin extends Circle {
 	private boolean selected;
-	private int row; 
-	private int place;  
-	public Pin(Point center, int radius, Color color,int row,int place) {
+	private int row;
+	private int place;
+
+	public Pin(Point center, int radius, Color color, int row, int place) {
 		super(center, radius, color);
 		this.row = row;
 		this.place = place;
@@ -17,7 +18,7 @@ public class Pin extends Circle {
 
 	@Override
 	public void Draw(Graphics g, float sizeY, float sizeX) {
-		g.setColor(color); 
+		g.setColor(color);
 		int ox = (int) Calculate(x, sizeX);
 		int oy = (int) Calculate(y, sizeY);
 		int diameterx = (int) Calculate(diameter, sizeX);
@@ -27,7 +28,7 @@ public class Pin extends Circle {
 					(int) (diameterx + Calculate(7, sizeX)), (int) (diametery + Calculate(7, sizeY)));
 		} else {
 			g.fillOval(ox, oy, diameterx, diametery);
-		}  
+		}
 	}
 
 	@Override
@@ -39,17 +40,20 @@ public class Pin extends Circle {
 		selected = select;
 		return selected;
 	}
+
 	public int GetRow() {
 		return row;
 	}
+
 	public int GetPlace() {
 		return place;
 	}
-	
-public void SetColor(Color c) {
-	this.color = c;
-}
-public Color GetColor() {
-	return this.color;
-}
+
+	public void SetColor(Color c) {
+		this.color = c;
+	}
+
+	public Color GetColor() {
+		return this.color;
+	}
 }

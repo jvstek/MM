@@ -1,10 +1,10 @@
 package masterMindGamesModes;
- 
+
 import HelpingClasses.MasterMindSettings;
 import HelpingClasses.SettingValidationError;
-import apiRuleSettings.CSOrganised; 
+import apiRuleSettings.CSOrganised;
 
-public class MMEasy extends MasterMind { 
+public class MMEasy extends MasterMind {
 	@Override
 	public void newgame() {
 		try {

@@ -12,7 +12,8 @@ public class Square extends Shape {
 	float minDrawCheck = (float) 0.73 * 100;
 	float maxDrawCheck = (float) 1.50 * 100;
 	private Color color;
-	private boolean hover= false;
+	private boolean hover = false;
+
 	public Square(Point center, Color color, int height, int width) {
 		super(center);
 		this.height = height;
@@ -27,8 +28,11 @@ public class Square extends Shape {
 		int oy = (int) (y * sizeY) / 100;
 		int w = (int) (width * sizeX) / 100;
 		int h = (int) (height * sizeY) / 100;
-		if(hover){g.fillRect(ox, oy, w+10, h+10);}else{
-		g.fillRect(ox, oy, w, h);}
+		if (hover) {
+			g.fillRect(ox, oy, w + 10, h + 10);
+		} else {
+			g.fillRect(ox, oy, w, h);
+		}
 		if (drawCheckString(sizeY, sizeX)) {
 			g.setColor(Color.WHITE);
 			// todo make fontsize grow accordingly if width and height stay
@@ -54,12 +58,12 @@ public class Square extends Shape {
 		float oy = Calculate(y, sizeY);
 		float oh = Calculate(height, sizeX);
 		float ow = Calculate(width, sizeY);
-		if (ox < coordinateX & oy < coordinateY) { 
-			if ((ox + ow) > coordinateX & (oy + oh) > coordinateY) { 
+		if (ox < coordinateX & oy < coordinateY) {
+			if ((ox + ow) > coordinateX & (oy + oh) > coordinateY) {
 				hover = true;
-				return true; 
-				
-			} 
+				return true;
+
+			}
 		}
 		hover = false;
 		return false;

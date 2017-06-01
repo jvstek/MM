@@ -3,7 +3,6 @@ package guiPackages;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import AI.MastermindApi;
@@ -25,8 +24,7 @@ public class MastermindPanel extends JPanel {
 		this.mastermindApi = ai;
 		y = sizeX;
 		x = sizeY;
-	 
-		
+
 		this.addMouseListener(new java.awt.event.MouseAdapter() {
 
 			@Override
@@ -49,15 +47,15 @@ public class MastermindPanel extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		try{
-		g.drawString("Score: " + mastermindApi.getScore(), 10, 10);
-		}catch(Exception e){//todo
-			
+		try {
+			g.drawString("Score: " + mastermindApi.getScore(), 10, 10);
+		} catch (Exception e) {// todo
+
 		}
 		for (IShape c : mastermindApi.getCircles()) {
 			c.Draw(g, percentageCalculator(x, this.getHeight()), percentageCalculator(y, this.getWidth()));
 		}
-		
+
 	}
 
 	private float percentageCalculator(int base, int target) {
@@ -85,6 +83,7 @@ public class MastermindPanel extends JPanel {
 			}
 		}
 		repaint();
+		// mastermindApi
 	}
 
 	public void MouseMoved(MouseEvent e) {

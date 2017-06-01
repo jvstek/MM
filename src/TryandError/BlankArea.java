@@ -1,24 +1,25 @@
 package TryandError;
+
 import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Color;
 
 public class BlankArea extends JLabel {
-    Dimension minSize = new Dimension(100, 50);
+	Dimension minSize = new Dimension(100, 50);
 
-    public BlankArea(Color color) {
-        setBackground(color);
-        setOpaque(true);
-        setBorder(BorderFactory.createLineBorder(Color.black));
-    }
+	public BlankArea(Color color) {
+		setBackground(color);
+		setOpaque(true);
+		setBorder(BorderFactory.createLineBorder(Color.black));
+	}
 
-    @Override
+	@Override
 	public Dimension getMinimumSize() {
-        return minSize;
-    }
+		return minSize;
+	}
 
-    @Override
+	@Override
 	public Dimension getPreferredSize() {
-        return minSize;
-    }
+		return minSize;
+	}
 }

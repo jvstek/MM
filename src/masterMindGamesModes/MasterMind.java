@@ -56,6 +56,7 @@ public abstract class MasterMind implements IMasterMind {
 	private void checkLive(int[] result) {
 		checkCount();
 		secretGeussed(result);
+		// save game
 	}
 
 	private void checkCount() {

@@ -3,9 +3,7 @@ package Testpack;
 import java.lang.reflect.Method;
 
 public class ClassMethodTest {
-	
-	
-	
+
 	public static void main(String args[]) throws Exception {
 
 		Testing t = new Testing("val1111", false);

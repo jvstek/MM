@@ -9,9 +9,10 @@ import java.util.Scanner;
 import HelpingClasses.ScoreBoardRow;
 
 public class IO {
+
 	static String sourcePath = "Mastermind/";
 	static String save = "SaveGame/";
-	static String setting= "Easy"; //todo make objects from them? 
+	static String setting= "Easy"; //todo 
 	static String fileName = "mmScore.txt";
 
 	public static void main(ScoreBoardRow sbr) {

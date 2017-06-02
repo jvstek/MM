@@ -1,4 +1,4 @@
-package AI;
+package control;
 
 import java.util.ArrayList;
 
@@ -9,14 +9,14 @@ import GuiShapes.Pin;
 import GuiShapes.ScorePin;
 import GuiShapes.Selector;
 import GuiShapes.Unknown;
-import helpingClasses.MColors;
-import helpingClasses.MasterMindSetup;
+import Services.MColors;
+import Services.MasterMindSetup;
 import masterMindGamesModes.IMasterMind;
 import masterMindGamesModes.MMEasy;
 import masterMindGamesModes.MMHard;
 import masterMindGamesModes.MMNormal;
 
-public class MastermindApi {
+public class MastermindControl {
 
 	// shows gives list to api to be draw
 	// multiple list it might remove my bugs
@@ -29,7 +29,7 @@ public class MastermindApi {
 	private int colorNumber;
 
 	// todo some settings
-	public MastermindApi(String t) {
+	public MastermindControl(String t) {
 		mms = new MasterMindSetup();
 		canvasShapes = new ArrayList<IShape>();
 		activeRow = 0;
@@ -47,13 +47,9 @@ public class MastermindApi {
 		gameStarter(imm);
 	}
 
-	public void StartEasyGame() {
-		// ResetGui();
+	public void StartEasyGame() { 
 		imm = new MMEasy();
-		gameStarter(imm);
-		// imm.newgame();
-		// SetupPlayField(imm);
-		// setSelectionPin(activeRow, activePlace, true);
+		gameStarter(imm); 
 	}
 
 	private void gameStarter(IMasterMind IMm) {

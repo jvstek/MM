@@ -2,8 +2,8 @@ package GameStarter;
 
 import javax.swing.*;
 
-import AI.MastermindApi;
-import guiPackages.MastermindFrame;
+import control.MastermindControl;
+import control.MastermindFrameControl;
 
 //import guiPackages.Shape;
 
@@ -11,8 +11,8 @@ public class Game {
 
 	public static void createGameFrame() {
 
-		MastermindApi mmA = new MastermindApi("test");
-		MastermindFrame masterMindFrame = new MastermindFrame(mmA);
+		MastermindControl mmA = new MastermindControl("test");
+		MastermindFrameControl masterMindFrame = new MastermindFrameControl(mmA);
 	}
 
 	public static void main(String[] args) {

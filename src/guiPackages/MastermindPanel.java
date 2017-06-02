@@ -5,8 +5,8 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
-import AI.MastermindApi;
 import GuiShapes.IShape;
+import control.MastermindControl;
 
 //responsible for all the symbols shown on the panel
 //Communicates with MastermindApi
@@ -18,9 +18,9 @@ public class MastermindPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	int y; // given y as base for percentage calculating
 	int x;// given x as base for percentage calculating
-	MastermindApi mastermindApi;
+	MastermindControl mastermindApi;
 
-	public MastermindPanel(MastermindApi ai, int sizeX, int sizeY) {
+	public MastermindPanel(MastermindControl ai, int sizeX, int sizeY) {
 		this.mastermindApi = ai;
 		y = sizeX;
 		x = sizeY;

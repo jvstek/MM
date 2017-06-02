@@ -1,6 +1,6 @@
 package ruleSettings;
 
-import helpingClasses.MColors;
+import Services.MColors;
 
 public class CSRandom implements ICheckScore {
 

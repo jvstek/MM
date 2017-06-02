@@ -1,4 +1,4 @@
-package guiPackages;
+package control;
 
 import java.awt.event.ActionEvent;
 
@@ -6,19 +6,20 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import AI.MastermindApi;
-import helpingClasses.GameBar;
+import Services.GameBar;
+import guiPackages.MastermindPanel;
+import guiPackages.ScoreBoard;
 
-public class MastermindFrame extends JFrame {
+public class MastermindFrameControl extends JFrame {
 	String title = "Game";
-	MastermindApi MmA;
+	MastermindControl MmA;
 	int frameSizeX = 500;
 	int frameSizeY = 800;
 	JPanel[] panels;
 	MastermindPanel MmP;
 	ScoreBoard SB;
 
-	public MastermindFrame(MastermindApi MmA) {
+	public MastermindFrameControl(MastermindControl MmA) {
 		this.setTitle(title);
 		this.MmA = MmA;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

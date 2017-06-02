@@ -1,4 +1,4 @@
-package helpingClasses;
+package Services;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,10 +11,10 @@ import javax.swing.KeyStroke;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
-import guiPackages.MastermindFrame;
+import control.MastermindFrameControl;
 
 public class GameBar {
-	public JMenuBar GameMenubar(MastermindFrame MmF) {
+	public JMenuBar GameMenubar(MastermindFrameControl MmF) {
 		JMenuBar gameBar = new javax.swing.JMenuBar();
 		JMenu game = game(MmF);
 		JMenu MasterMindMenu = Menu("Mastermind", 'M');
@@ -40,7 +40,7 @@ public class GameBar {
 		return _menu;
 	}
 
-	private JMenu game(MastermindFrame MmF) {
+	private JMenu game(MastermindFrameControl MmF) {
 		JMenu game = Menu("Game", 'G');
 		game.addMenuListener(new MenuListener() {
 
@@ -61,7 +61,7 @@ public class GameBar {
 		return game;
 	}
 
-	private JMenu score(MastermindFrame MmF) {
+	private JMenu score(MastermindFrameControl MmF) {
 		JMenu score = Menu("score", 'C');
 		score.addMenuListener(new MenuListener() {
 
@@ -82,7 +82,7 @@ public class GameBar {
 		return score;
 	}
 
-	private JMenuItem addMenuItemEasy(MastermindFrame MmF) {
+	private JMenuItem addMenuItemEasy(MastermindFrameControl MmF) {
 		JMenuItem menuItem = new javax.swing.JMenuItem();
 		menuItem.setText("Easy");
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, 0));
@@ -97,7 +97,7 @@ public class GameBar {
 		return menuItem;
 	}
 
-	private JMenuItem addMenuItemNormal(MastermindFrame MmF) {
+	private JMenuItem addMenuItemNormal(MastermindFrameControl MmF) {
 		JMenuItem _menuItem = new javax.swing.JMenuItem();
 		_menuItem.setText("Normal");
 		_menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, 0));

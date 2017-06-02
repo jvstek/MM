@@ -2,7 +2,7 @@ package masterMindGamesModes;
 
 import java.util.List;
 
-import helpingClasses.MColors;
+import Services.MColors;
 import ruleSettings.ICheckScore;
 import ruleSettings.MasterMindSettings;
 import ruleSettings.SetSecret;

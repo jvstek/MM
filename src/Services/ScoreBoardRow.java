@@ -1,4 +1,4 @@
-package helpingClasses;
+package Services;
 
 public class ScoreBoardRow {
 	// name // score //mode //time (when there is time)

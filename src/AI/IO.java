@@ -6,29 +6,30 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import HelpingClasses.ScoreBoardRow;
+import HelpingClasses.ScoreBoardRow; 
 
 public class IO {
 
 	static String sourcePath = "Mastermind/";
 	static String save = "SaveGame/";
-	static String setting= "Easy"; //todo 
+	static String setting= "Easy"; //todo (make for every mode a save game) 
 	static String fileName = "mmScore.txt";
-
-	public static void main(ScoreBoardRow sbr) {
-		 ArrayList<ScoreBoardRow> sbrl =readScore(sourcePath, save, fileName);
-		System.out.println(readScore(sourcePath, save, fileName).size());
+	 
+	public void Add(ScoreBoardRow sbr) {
+		 ArrayList<ScoreBoardRow> sbrl =readScore();//sourcePath, save, fileName);
+		//System.out.println(readScore(sourcePath, save, fileName).size());
 		
-		//sbrl.add(sbr);
-		// organize list
+		sbrl.add(sbr);
+		// organize list ? 
+		//System.out.println(readScore(sourcePath, save, fileName).size());
 		SaveGame(sbrl);
 	}
-	public static void SaveGame(ArrayList<ScoreBoardRow>sbrl) {
+	public void SaveGame(ArrayList<ScoreBoardRow>sbrl) {
 		PrintWriter write = null;
 		try {
 			write = new PrintWriter(sourcePath + save+ fileName);
 			for(ScoreBoardRow sbr: sbrl){
-				write.print(sbr.getName() + ":" + sbr.getAttempts()+":"+sbr.getScore()+":"+sbr.getMode()+":");
+				write.print(sbr.GetName() + ":" + sbr.GetAttempts()+":"+sbr.GetScore()+":"+sbr.GetMode()+":");
 			}
 		} catch (Exception e) {
 			if (e instanceof FileNotFoundException) {
@@ -43,10 +44,11 @@ public class IO {
 			}}
 	}
 	
-	public static ArrayList<ScoreBoardRow> readScore( String sourcePath, String save,String fileName){
+	public ArrayList<ScoreBoardRow> readScore(){ //String sourcePath, String save,String fileName){
 		File file = null;
 		Scanner sc = null;
 		ArrayList<ScoreBoardRow>  sbrl = new ArrayList<ScoreBoardRow>();
+	 
 		try {
 			file = new File(sourcePath + save+ fileName);
 			sc = new Scanner(file);
@@ -72,7 +74,7 @@ public class IO {
 			if (sc != null) {
 				sc.close();
 			}
-		}
+		} 
 		return sbrl;
 	}
 }

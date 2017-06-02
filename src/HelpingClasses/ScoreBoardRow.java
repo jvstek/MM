@@ -2,31 +2,31 @@ package HelpingClasses;
 
 public class ScoreBoardRow {
 	// name // score //mode //time (when there is time)
-	private String name;
-	private double score;
-	private int attempts;
-	private String mode;
+	private String Name;
+	private int AttemptsLeft;
+	private double Score;
+	private String Mode;
 
 	public ScoreBoardRow(String name, int attempts, double score, String mode) {
-		this.name = name;
-		this.score = score;
-		this.mode = mode;
-		this.attempts = attempts;
+		this.Name = name;
+		this.Score = score;
+		this.Mode = mode;
+		this.AttemptsLeft = attempts;
 	}
 
-	public String getName() {
-		return name;
+	public String GetName() {
+		return Name;
 	}
 
-	public double getScore() {
-		return score;
+	public double GetScore() {
+		return Score;
 	}
 
-	public int getAttempts() {
-		return attempts;
+	public int GetAttempts() {
+		return AttemptsLeft;
 	}
 
-	public String getMode() {
-		return mode;
+	public String GetMode() {
+		return Mode;
 	}
 }

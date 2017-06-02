@@ -8,7 +8,7 @@ public class MMNormal extends MasterMind {
 	@Override
 	public void newgame() {
 		try {
-			mms = new MasterMindSettings(7, 4, 10, 2, 0, 1, 4);
+			mms = new MasterMindSettings(7, 4, 7, 2, 0, 1, 3);
 			this.live = true;
 			SecretCode = sus.SetSecretCode(mms.getRowLenght(), mms.getSameColorAllowed(), mms.getPlaycolors());
 			ICS = new CSOrganised(mms.getRowLenght());

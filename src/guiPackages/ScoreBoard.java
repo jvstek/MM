@@ -1,56 +1,59 @@
 package guiPackages;
 
+import java.awt.GridLayout;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import AI.IO;
 import HelpingClasses.ScoreBoardRow;
+import HelpingClasses.ScoreBoardSorter;
 
-public class ScoreBoard extends JPanel {
+public class ScoreBoard extends JPanel { 
 	// name // score //difficultie //time (when there is time)
 	JLabel label;
 	ScoreBoardRow SBR;
-
+	IO io;
 	public ScoreBoard() {
-		JLabel lab1 = new JLabel("User Name", SwingConstants.LEFT);
-		add(lab1);
-		SBR = new ScoreBoardRow("teste", 1, 1, "t2");
-		SBR.getClass().getFields();
-		// for (Field test : SBR.getClass().getDeclaredFields()) {
-		//
-		//
-		// System.out.println(test.get);
-		//
-		// }
-		// for(Method method : SBR.getClass().getMethods()){
-		// Object value = method;
-		// value.toString();
-		// if ((method.getName().startsWith("get")) &&
-		// (method.getName().length() == (field.getName().length() + 3)))
-		// {
-		// if
-		// (method.getName().toLowerCase().endsWith(field.getName().toLowerCase()))
-		// {
-		// // MZ: Method found, run it
-		// try
-		// {
-		// return method.invoke(SBR.getClass());
-		// }
-		// catch (IllegalAccessException e)
-		// {
-		// System.out.println("Could not determine method: " +
-		// method.getName());
-		// }
-		//
-		//
-		// }
-		// }
-		//
-		// }
-		// baselineResult.GetType().GetProperties())
-		// TODO Auto-generated constructor stub
-		// file reader read all information
-		// Organize the information
-		// display the information
+		io = new IO();
+		ScoreBoardSorter sbs = new  ScoreBoardSorter();
+		try{
+		ArrayList<ScoreBoardRow> sbrl =io.readScore();
+		 
+		setLayout(new GridLayout(0,4));
+		 sbrl.sort(sbs);
+		addCollumNames(sbrl.get(0));
+		writeRow(sbrl);
+		}catch(Exception e){System.out.println("Something went wrong with the scoreboard");}
+	}
+
+	private void writeRow(ArrayList<ScoreBoardRow> sbrl) {
+		for (ScoreBoardRow sbr : sbrl) {
+		Field[] fields = sbr.getClass().getDeclaredFields();
+		for (Field field : fields) {
+			try {JLabel label = new JLabel();
+				field.setAccessible(true); // Additional line  
+				label.setText( field.get(sbr).toString());
+				this.add(label);
+				label.setVisible(true);
+			} catch (IllegalArgumentException | IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+		}}
+	}	
+	private  void addCollumNames(ScoreBoardRow sbr){
+		Field[] fields = sbr.getClass().getDeclaredFields();
+		
+		for (Field field : fields) { JLabel label = new JLabel();
+				field.setAccessible(true); // Additional line 
+				label.setText(field.getName());
+				this.add(label);
+				label.setVisible(true);
+				
+		}
 	}
 }

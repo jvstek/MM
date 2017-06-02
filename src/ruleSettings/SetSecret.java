@@ -1,4 +1,4 @@
-package apiRuleSettings;
+package ruleSettings;
 
 import java.util.ArrayList;
 import java.util.Collections;

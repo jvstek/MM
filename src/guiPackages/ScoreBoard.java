@@ -6,11 +6,9 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-
 import AI.IO;
-import HelpingClasses.ScoreBoardRow;
-import HelpingClasses.ScoreBoardSorter;
+import helpingClasses.ScoreBoardRow;
+import helpingClasses.ScoreBoardSorter;
 
 public class ScoreBoard extends JPanel { 
 	// name // score //difficultie //time (when there is time)

@@ -1,6 +1,6 @@
 package masterMindGamesModes;
 
-import HelpingClasses.MasterMindSettings;
+import ruleSettings.MasterMindSettings;
 
 public interface IMasterMind {
 

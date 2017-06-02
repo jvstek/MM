@@ -1,4 +1,4 @@
-package apiRuleSettings;
+package ruleSettings;
 
 public class CSOrganised implements ICheckScore {
 	private boolean[] secretChecked;

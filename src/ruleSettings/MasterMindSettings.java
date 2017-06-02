@@ -1,26 +1,25 @@
-package HelpingClasses;
+package ruleSettings;
 
 public class MasterMindSettings {
 	private int sameColorAllowed; // when making a new game
 	// private float multiplier; // score multiplier? To be decided later on
-	private float greyScoreValue; // give each there own value? or a standard
-									// value then increase it with multiplier?
-	private float whiteScoreValue;
+	private float greyScoreValue; // give each there own value for quick gamesettings these value's are good enough (for now)
+	private float whiteScoreValue; //float is better to calculate with.... but wont be used at the moment
 	private float blackScoreValue;
 	private int maxAttempts; // maximum attempts
 	private int rowLenght;// Standard row length could change with the
 							// difficulty of the game
 	private int playcolors; // amount of colors in play or make it max?
-							// (cause there i a fix amount of colors)
+							// (cause there i a fix amount of colors) there is code to change it but some colors look to much alike then
 	// validation errors can be caused when custom games are implemented....
 
 	public MasterMindSettings(int PlayColors, int RowLenght, int MaxAttempt, int SameColorAllowed, float GreyScoreValue,
 			float WhiteScoreValue, float BlackScoreValue) throws SettingValidationError {
 		if (!settingCheck(PlayColors, RowLenght, MaxAttempt, SameColorAllowed)) {
-			throw new SettingValidationError("SomeSettings aint good enough");
+			throw new SettingValidationError("Some settings aint good enough");
 		}
 		if (!checkValidation(PlayColors, RowLenght, SameColorAllowed)) {
-			throw new SettingValidationError("More Places in a row then Colors Availeble");
+			throw new SettingValidationError("More places in a row then Colors Availeble");
 		}
 		if (!checkScoreValue(GreyScoreValue, WhiteScoreValue, BlackScoreValue)) {
 			throw new SettingValidationError(

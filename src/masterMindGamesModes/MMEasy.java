@@ -1,8 +1,8 @@
 package masterMindGamesModes;
 
-import HelpingClasses.MasterMindSettings;
-import HelpingClasses.SettingValidationError;
-import apiRuleSettings.CSOrganised;
+import ruleSettings.CSOrganised;
+import ruleSettings.MasterMindSettings;
+import ruleSettings.SettingValidationError;
 
 public class MMEasy extends MasterMind {
 	@Override

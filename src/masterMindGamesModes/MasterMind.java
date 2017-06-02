@@ -2,10 +2,10 @@ package masterMindGamesModes;
 
 import java.util.List;
 
-import HelpingClasses.MColors;
-import HelpingClasses.MasterMindSettings;
-import apiRuleSettings.ICheckScore;
-import apiRuleSettings.SetSecret;
+import helpingClasses.MColors;
+import ruleSettings.ICheckScore;
+import ruleSettings.MasterMindSettings;
+import ruleSettings.SetSecret;
 
 public abstract class MasterMind implements IMasterMind {
 	protected boolean live;// check if game is live

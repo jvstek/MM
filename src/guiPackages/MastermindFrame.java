@@ -7,7 +7,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import AI.MastermindApi;
-import HelpingClasses.GameBar;
+import helpingClasses.GameBar;
 
 public class MastermindFrame extends JFrame {
 	String title = "Game";

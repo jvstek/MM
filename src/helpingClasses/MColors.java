@@ -1,4 +1,4 @@
-package HelpingClasses;
+package helpingClasses;
 
 import java.awt.Color;
 import java.util.HashMap;

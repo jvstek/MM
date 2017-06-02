@@ -1,8 +1,8 @@
 package masterMindGamesModes;
 
-import HelpingClasses.MasterMindSettings;
-import HelpingClasses.SettingValidationError;
-import apiRuleSettings.CSRandom;
+import ruleSettings.CSRandom;
+import ruleSettings.MasterMindSettings;
+import ruleSettings.SettingValidationError;
 
 public class MMHard extends MasterMind {
 	@Override

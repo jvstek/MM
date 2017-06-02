@@ -6,25 +6,21 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import HelpingClasses.ScoreBoardRow; 
+import helpingClasses.ScoreBoardRow; 
 
 public class IO {
 
-	static String sourcePath = "Mastermind/";
-	static String save = "SaveGame/";
-	static String setting= "Easy"; //todo (make for every mode a save game) 
-	static String fileName = "mmScore.txt";
+	private String sourcePath = "Mastermind/";
+	private String save = "SaveGame/";
+	//static String setting= "Easy"; //todo (make for every mode a save game) 
+	private String fileName = "mmScore.txt";
 	 
-	public void Add(ScoreBoardRow sbr) {
-		 ArrayList<ScoreBoardRow> sbrl =readScore();//sourcePath, save, fileName);
-		//System.out.println(readScore(sourcePath, save, fileName).size());
-		
-		sbrl.add(sbr);
-		// organize list ? 
-		//System.out.println(readScore(sourcePath, save, fileName).size());
+	public void AddGame(String name, int attempts, double score, String mode) {
+		 ArrayList<ScoreBoardRow> sbrl =readScore();
+		sbrl.add(new ScoreBoardRow(name,attempts,score,mode));
 		SaveGame(sbrl);
 	}
-	public void SaveGame(ArrayList<ScoreBoardRow>sbrl) {
+	private void SaveGame(ArrayList<ScoreBoardRow>sbrl) {
 		PrintWriter write = null;
 		try {
 			write = new PrintWriter(sourcePath + save+ fileName);

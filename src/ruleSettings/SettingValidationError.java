@@ -1,4 +1,4 @@
-package HelpingClasses;
+package ruleSettings;
 
 public class SettingValidationError extends Exception {
 

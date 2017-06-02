@@ -1,4 +1,4 @@
-package HelpingClasses;
+package helpingClasses;
 
 import java.util.Comparator;
 
@@ -11,8 +11,7 @@ public class ScoreBoardSorter implements Comparator<ScoreBoardRow> {
 		 else if(o1.GetScore()<o2.GetScore()){return 1;}
 		 else if(o1.GetScore()>o2.GetScore()){return -1;}
 		  
-		return 0;
-				//CompareModes(o1,o2);
+		return CompareModes(o1,o2);
 	}
 	private int CompareModes(ScoreBoardRow o1, ScoreBoardRow o2){
 		int t = 0;

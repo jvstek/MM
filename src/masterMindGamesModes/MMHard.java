@@ -8,7 +8,7 @@ public class MMHard extends MasterMind {
 	@Override
 	public void newgame() {
 		try {
-			mms = new MasterMindSettings(7, 5, 11, 2, -3, 1, 5);
+			mms = new MasterMindSettings(7, 5, 12, 2, -3, 1, 5);
 			this.live = true;
 			SecretCode = sus.SetSecretCode(mms.getRowLenght(), mms.getSameColorAllowed(), mms.getPlaycolors());
 			ICS = new CSRandom(mms.getRowLenght());

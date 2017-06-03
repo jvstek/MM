@@ -3,7 +3,7 @@ package masterMindGamesModes;
 import ruleSettings.CSOrganised;
 import ruleSettings.MasterMindSettings;
 import ruleSettings.SettingValidationError;
-
+	
 public class MMEasy extends MasterMind {
 	@Override
 	public void newgame() {

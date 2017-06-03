@@ -7,14 +7,14 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import Services.GameBar;
-import guiPackages.MastermindPanel;
-import guiPackages.ScoreBoard;
+import guiPanels.MastermindPanel;
+import guiPanels.ScoreBoard; 
 
 public class MastermindFrameControl extends JFrame {
 	String title = "Game";
 	MastermindControl MmA;
-	int frameSizeX = 500;
-	int frameSizeY = 800;
+	int frameSizeX = 550; //todo make the width depending on amount in a row
+	int frameSizeY = 800; ////todo make the heigth depending on amount in a row
 	JPanel[] panels;
 	MastermindPanel MmP;
 	ScoreBoard SB;
@@ -27,7 +27,7 @@ public class MastermindFrameControl extends JFrame {
 		panels = new JPanel[2];
 		MmP = new MastermindPanel(MmA, frameSizeX, frameSizeY);
 		panels[0] = MmP;
-		panels[1] = new ScoreBoard(); // todo
+		panels[1] = new ScoreBoard(); // think of a better way to do this. 
 		add(MmP);
 		this.setSize(frameSizeX, frameSizeY);
 		setVisible(true);
@@ -42,10 +42,14 @@ public class MastermindFrameControl extends JFrame {
 				MmA.StartEasyGame();
 				MmP.repaint();
 				showPanelNumber(0, panels);
-				// switch mmpanel
 				break;
 			case "Normal":
 				MmA.StartNormalGame();
+				MmP.repaint();
+				showPanelNumber(0, panels);
+				break;
+			case "Hard":
+				MmA.StartHardGame();
 				MmP.repaint();
 				showPanelNumber(0, panels);
 				break;
@@ -59,7 +63,7 @@ public class MastermindFrameControl extends JFrame {
 	}
 
 	public void MenuScoreClicked() {
-		panels[1] = new ScoreBoard();
+		panels[1] = new ScoreBoard(); //stil needfixing. 
 		add(panels[1]);
 		showPanelNumber(1, panels);
 		// add(MmP).setVisible(false);

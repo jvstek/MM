@@ -19,12 +19,7 @@ public class CSRandom implements ICheckScore {
 	public int[] getScorePins(Iterable<Integer> secret, int[] attempt) {
 		prepareCheck();
 		checkBlack(secret, attempt);
-		checkWhite(secret, attempt);
-		// filTheRest();you dont need to fil the rest because it is default
-		// graypin color when preparing
-		// for(int i = 0;i<result.length;i++){
-		// System.out.println(i + "plaats " + result[i] + " resultaat");
-		// }
+		checkWhite(secret, attempt); 
 		return result;
 	}
 
@@ -70,8 +65,7 @@ public class CSRandom implements ICheckScore {
 	private void checkWhite(Iterable<Integer> secret, int[] attempt) {
 		for (int i = 0; i < attempt.length; i++) {
 			int g = 0;
-			for (int s : secret) {
-				System.out.println(s + " secret " + attempt[i]);
+			for (int s : secret) { 
 				if (attempt[i] == s && secretChecked[g] == false) {
 					secretChecked[g] = true;
 					result[place] = MColors.white.GetColorNumber();

@@ -1,5 +1,7 @@
 package ruleSettings;
 
+import Services.MColors;
+
 public class CSOrganised implements ICheckScore {
 	private boolean[] secretChecked;
 	private int[] result;
@@ -14,11 +16,6 @@ public class CSOrganised implements ICheckScore {
 		prepareCheck();
 		checkBlack(secret, attempt);
 		checkWhite(secret, attempt);
-		// filTheRest();you dont need to fil the rest because it is default
-		// graypin color when preparing
-		// for(int i = 0;i<result.length;i++){
-		// System.out.println(i + "plaats " + result[i] + " resultaat");
-		// }
 		return result;
 	}
 
@@ -40,7 +37,7 @@ public class CSOrganised implements ICheckScore {
 		int place = 0;
 		int length = result.length;
 		while (place < length) {
-			result[place] = -2; // set default grey todo
+			result[place] = MColors.gray.GetColorNumber();
 			place++;
 		}
 	}
@@ -51,7 +48,7 @@ public class CSOrganised implements ICheckScore {
 			for (int s : secret) {
 				if (attempt[i] == s && i == g) {
 					secretChecked[g] = true;
-					result[i] = 0;// black color todo
+					result[i] = MColors.black.GetColorNumber();
 				}
 				g++;
 			}
@@ -64,11 +61,10 @@ public class CSOrganised implements ICheckScore {
 			for (int s : secret) {
 				if (attempt[i] == s && secretChecked[g] == false) {
 					secretChecked[g] = true;
-					result[i] = -1;// set white todo
+					result[i] =MColors.white.GetColorNumber();
 				}
 				g++;
 			}
 		}
 	}
-	// private void filTheRest(Iterable<Integer>secret, int[]attempt){}
 }

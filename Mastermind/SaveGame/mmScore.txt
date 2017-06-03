@@ -1,6 +1,1 @@
-name:1:20.0:Easy:
-name:4:12.0:Easy:
-name:3:55.0:Easy:
-name:3:1.0:Easy:
-name:3:22.0:Easy:
-name:3:100.0:Easy:
+Jos:10:47.0:test:

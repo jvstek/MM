@@ -1,4 +1,4 @@
-package guiPackages;
+package guiPanels;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
@@ -19,12 +19,12 @@ public class MastermindPanel extends JPanel {
 	int y; // given y as base for percentage calculating
 	int x;// given x as base for percentage calculating
 	MastermindControl mastermindApi;
-
+	
 	public MastermindPanel(MastermindControl ai, int sizeX, int sizeY) {
 		this.mastermindApi = ai;
 		y = sizeX;
 		x = sizeY;
-
+	
 		this.addMouseListener(new java.awt.event.MouseAdapter() {
 
 			@Override
@@ -83,7 +83,8 @@ public class MastermindPanel extends JPanel {
 			}
 		}
 		repaint();
-		// mastermindApi
+		if(!mastermindApi.isLive()){
+		mastermindApi.saveGame(); }
 	}
 
 	public void MouseMoved(MouseEvent e) {
@@ -92,6 +93,7 @@ public class MastermindPanel extends JPanel {
 		for (IShape c : mastermindApi.getCircles()) {
 			if (c.HasCollision(coordinateX, coordinateY, percentageCalculator(x, this.getHeight()),
 					percentageCalculator(y, this.getWidth()))) {
+				
 			}
 		}
 		repaint();

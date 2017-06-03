@@ -52,6 +52,11 @@ public abstract class MasterMind implements IMasterMind {
 		double s = score;
 		return s;
 	}
+	
+	@Override
+	public int getCount() {
+		return count;
+	}
 
 	private void checkLive(int[] result) {
 		checkCount();

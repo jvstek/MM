@@ -30,11 +30,10 @@ public class SetSecret {
 				until++;
 			}
 		}
-		for (Integer secies : SecretCodeList) {
-			System.out.print(secies);
-		}
-		System.out.println();
-
+//		for (Integer secies : SecretCodeList) {
+//			System.out.print(secies);
+//		}
+//		System.out.println();
 		return SecretCodeList;
 	}
 

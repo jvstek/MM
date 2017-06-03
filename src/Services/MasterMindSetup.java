@@ -11,6 +11,7 @@ import GuiShapes.Square;
 import GuiShapes.Unknown;
 
 public class MasterMindSetup {
+	//Todo Debug with increasing row numbers they eventually cros? 
 	// set up information
 	private int xPosition = 80; // starting position of x
 	private int yPostion = 120; // starting position of y
@@ -49,7 +50,7 @@ public class MasterMindSetup {
 	// double row needs additional logica when row is longer then standerd 4.
 	// so it is as is for the time being
 	public ArrayList<IShape> SetScorePins(int RowLength, int RowAmount) {
-		Point StartingPoint = new Point(xPosition + RowLength * (playFieldPinSize * 2) + playFieldPinSize, yPostion);
+		Point StartingPoint = new Point(xPosition + RowLength * (playFieldPinSize * 2)+ (int)(RowLength * (playFieldPinMargin-1)), yPostion);
 		return SetScoreRows(RowLength, RowAmount, StartingPoint);
 	}
 
@@ -58,15 +59,15 @@ public class MasterMindSetup {
 	public ArrayList<IShape> SetSelectors(int RowLength, int ColorAmount) {
 		ArrayList<IShape> SelectorShapes = new ArrayList<IShape>();
 
-		int y = (int) (yPostion + (RowLength * (playFieldPinSize * 2)) + playFieldSelectorSize
-				+ (RowLength * (playFieldScoreSize * 2)));
-		int x = xPosition + (int) playFieldSelectorMargin;
+		int x = (int) (yPostion + (RowLength * (playFieldPinSize * 2)) + playFieldSelectorSize
+				+ (RowLength * (playFieldScoreSize * 2)+ (int)(RowLength * playFieldScoreMargin)));
+		int y = xPosition + (int) playFieldSelectorMargin;
 		for (int i = 0; i < ColorAmount; i++) {
-			Selector c = new Selector(new Point(y, x), (int) playFieldSelectorSize, MColors.GetMColor(i).GetColor());
+			Selector c = new Selector(new Point(x, y), (int) playFieldSelectorSize, MColors.GetMColor(i).GetColor());
 			SelectorShapes.add(c);
-			x = (int) (x + (playFieldSelectorSize * 2) + playFieldSelectorMargin);
+			y = (int) (y + (playFieldSelectorSize * 2) + playFieldSelectorMargin);
 		}
-		Square check = new Square(new Point((int) (y - playFieldSelectorSize), x), MColors.GetMColor(0).GetColor(),
+		Square check = new Square(new Point((int) (x - playFieldSelectorSize), y), MColors.GetMColor(0).GetColor(),
 				(int) (playFieldSelectorSize * SelectorSizeDifference),
 				(int) (playFieldSelectorSize * SelectorSizeDifference * 2));
 		SelectorShapes.add(check);

@@ -1,4 +1,4 @@
-package Services;
+	package Services;
  
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner; 
 
-public class IO {
+public class IOScore {
 
 	private String sourcePath = "Mastermind/";
 	private String save = "SaveGame/";

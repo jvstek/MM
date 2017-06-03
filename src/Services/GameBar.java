@@ -14,6 +14,7 @@ import javax.swing.event.MenuListener;
 import control.MastermindFrameControl;
 
 public class GameBar {
+	//todo make more general menu listerner?
 	public JMenuBar GameMenubar(MastermindFrameControl MmF) {
 		JMenuBar gameBar = new javax.swing.JMenuBar();
 		JMenu game = game(MmF);
@@ -23,9 +24,10 @@ public class GameBar {
 		game.add(MasterMindMenu);
 		MasterMindMenu.add(addMenuItemEasy(MmF));
 		MasterMindMenu.add(addMenuItemNormal(MmF));
+		MasterMindMenu.add(addMenuItemHard(MmF));
 		game.add(addMenuItemExit());
 
-		gameBar.add(Menu("Settings", 'S'));
+		//gameBar.add(Menu("Settings", 'S'));
 
 		gameBar.add(score(MmF));
 
@@ -101,6 +103,20 @@ public class GameBar {
 		JMenuItem _menuItem = new javax.swing.JMenuItem();
 		_menuItem.setText("Normal");
 		_menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, 0));
+
+		_menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MmF.MenuItemClicked(e);
+			}
+		});
+
+		return _menuItem;
+	}
+	private JMenuItem addMenuItemHard(MastermindFrameControl MmF) {
+		JMenuItem _menuItem = new javax.swing.JMenuItem();
+		_menuItem.setText("Hard");
+		_menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, 0));
 
 		_menuItem.addActionListener(new ActionListener() {
 			@Override

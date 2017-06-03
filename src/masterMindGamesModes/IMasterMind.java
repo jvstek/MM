@@ -13,4 +13,5 @@ public interface IMasterMind {
 	public abstract boolean isLive();
 
 	public abstract double getScore();
+	public abstract int getCount();
 }

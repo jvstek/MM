@@ -9,6 +9,7 @@ import GuiShapes.Pin;
 import GuiShapes.ScorePin;
 import GuiShapes.Selector;
 import GuiShapes.Unknown;
+import Services.IOScore;
 import Services.MColors;
 import Services.MasterMindSetup;
 import masterMindGamesModes.IMasterMind;
@@ -27,7 +28,8 @@ public class MastermindControl {
 	private int activeRow;
 	private int activePlace;
 	private int colorNumber;
-
+	private boolean scoreSaved; // todo decide where to put it properly
+	private String gameType;
 	// todo some settings
 	public MastermindControl(String t) {
 		mms = new MasterMindSetup();
@@ -35,37 +37,53 @@ public class MastermindControl {
 		activeRow = 0;
 		activePlace = 0;
 		colorNumber = 0;
+		scoreSaved = false;
+		gameType= "";
 	}
 
 	public void StartHardGame() {
 		imm = new MMHard();
+		gameType= "Hard";
 		gameStarter(imm);
 	}
 
 	public void StartNormalGame() {
 		imm = new MMNormal();
+		gameType= "Normal";
 		gameStarter(imm);
 	}
 
 	public void StartEasyGame() { 
 		imm = new MMEasy();
+		gameType= "Easy";
 		gameStarter(imm); 
 	}
-
+	
 	private void gameStarter(IMasterMind IMm) {
-		ResetGui();
+		resetGui();
 		imm.newgame();
 		SetupPlayField(imm);
 		setSelectionPin(activeRow, activePlace, true);
 	}
-
-	private void ResetGui() {
+	
+	private void resetGui() {
 		colorNumber = 0;
 		activeRow = 0;
 		activePlace = 0;
 		canvasShapes.clear();
+		scoreSaved = false;
 	}
-
+	public void saveGame(){
+		
+		if(!scoreSaved){
+		String name = JOptionPane.showInputDialog("Save score","Please Enter your name.");
+		if(name != null){
+		IOScore oi = new IOScore();
+		int attemptsLeft = imm.GetMasterMindSettings().getMaxAttempts() - imm.getCount();
+		oi.AddGame(name, 10, imm.getScore(), "test");
+		scoreSaved = true;}
+		}
+	} 
 	public Iterable<IShape> getCircles() {
 		Iterable<IShape> cl = canvasShapes;
 		return cl;
@@ -82,8 +100,8 @@ public class MastermindControl {
 	}
 
 	public void setSelectedCircle(IShape s) {
-		// if it is a pin set a pin(if it is from a active row). if it is a
-		// selector set color.
+		// if it is a pin set a pin(if it is from a active row). 
+		//if it is a selector set color.
 		switch (s.getClass().getName()) {
 		case "GuiShapes.Pin":
 			setSelectedPin(((Pin) s));
@@ -217,6 +235,9 @@ public class MastermindControl {
 
 	public double getScore() {
 		return imm.getScore();
+	}
+	public boolean isLive(){
+		return imm.isLive();
 	}
 
 }

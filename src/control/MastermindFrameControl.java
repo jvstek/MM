@@ -75,9 +75,6 @@ public class MastermindFrameControl extends JFrame {
 	public void MenuGameClicked() {
 		showPanelNumber(0, panels);
 	}
-	private void thistestlist() {
-	 this.list();
-	}
 	private boolean containsScoreBoard(JPanel[] panels) {
 		for (JPanel jPanel : panels) {
 			System.out.println(jPanel.getName());

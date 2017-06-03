@@ -1,0 +1,15 @@
+Todo list
+Make panel changes smoother. 
+proper use of different style game modes.  Make it more flexible.  Put it in prefixed file. (all game modes with game settings) ? 
+(all the modusses in a array... so it is stil compareble...+ need to make game bar more flexible thing of a logic to assign hotkeys)  in other words implement custom(advanced)
+Is doable.... 
+Make a prettier sound serive
+Consistent same style name giving. (other people like that)
+
+Final 
+
+bug notes
+When mmpanel was set on visible false it doest resize anymore. 
+Make height and width from frame dependeble on row count. (or organize it with more panels) 
+When increasing the row the shapes come closer and closer together. 
+If the program is open multiple times it gives problems with the score.

@@ -69,8 +69,7 @@ public class MastermindFrameControl extends JFrame {
 		panels[1] = new ScoreBoard(); //stil needfixing. 
 		add(panels[1]);
 		showPanelNumber(1, panels);
-		// add(MmP).setVisible(false);
-		thistestlist();
+
 	}
 
 	public void MenuGameClicked() {

@@ -76,11 +76,11 @@ public class MastermindControl {
 	public void saveGame(){
 		
 		if(!scoreSaved){
-		String name = JOptionPane.showInputDialog("Save score","Please Enter your name.");
+		String name = JOptionPane.showInputDialog("Enter name. To Save your score " + imm.getScore(),"Please Enter your name.");
 		if(name != null){
 		IOScore oi = new IOScore();
 		int attemptsLeft = imm.GetMasterMindSettings().getMaxAttempts() - imm.getCount();
-		oi.AddGame(name, 10, imm.getScore(), "test");
+		oi.AddGame(name, (imm.GetMasterMindSettings().getMaxAttempts()-imm.getCount()), imm.getScore(), gameType);
 		scoreSaved = true;}
 		}
 	} 

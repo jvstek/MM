@@ -16,7 +16,9 @@ public class ScoreBoard extends JPanel {
 	JLabel label;
 	ScoreBoardRow SBR;
 	IOScore io;
-	public ScoreBoard() {setLayout(new GridLayout(0,4));
+	public ScoreBoard() {
+		setLayout(new GridLayout(0,4));
+		this.removeAll();
 		io = new IOScore();
 		 getScores();
 		 }

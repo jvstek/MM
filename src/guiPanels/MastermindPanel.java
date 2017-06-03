@@ -16,6 +16,7 @@ public class MastermindPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	//bug when it has been hidden it doesnt listen to the size changes anymore. 
 	int y; // given y as base for percentage calculating
 	int x;// given x as base for percentage calculating
 	MastermindControl mastermindApi;

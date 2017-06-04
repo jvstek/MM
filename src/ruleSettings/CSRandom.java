@@ -3,7 +3,7 @@ package ruleSettings;
 import Services.MColors;
 
 public class CSRandom implements ICheckScore {
-	// think of a better way to do the chekcs...
+	// think of a better way to do the checks...
 	private boolean[] secretChecked;
 	private boolean[]pinSet;
 	private int[] result;

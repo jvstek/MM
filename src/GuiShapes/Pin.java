@@ -12,8 +12,7 @@ public class Pin extends Circle {
 	public Pin(Point center, int radius, Color color, int row, int place) {
 		super(center, radius, color);
 		this.row = row;
-		this.place = place;
-		// TODO Auto-generated constructor stub
+		this.place = place; 
 	}
 
 	@Override

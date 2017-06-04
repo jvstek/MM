@@ -14,9 +14,7 @@ public class Unknown extends Circle {
 
 	@Override
 	public void OnHover() {
-
 		// todo this circle represents 1 pin of the unknown secret code the AI
-		// made
 	}
 
 	public void SetColor(Color color) {

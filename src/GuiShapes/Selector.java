@@ -7,8 +7,7 @@ import java.awt.Point;
 public class Selector extends Circle {
 
 	public Selector(Point center, int radius, Color color) {
-		super(center, radius, color);
-		// TODO Auto-generated constructor stub
+		super(center, radius, color); 
 	}
 
 	@Override

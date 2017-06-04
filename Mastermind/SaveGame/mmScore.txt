@@ -1,1 +1,1 @@
-Jos:10:47.0:test:Easy:10:20.0:test:TR:10:18.0:test:clas:10:17.0:test:Yay:1:16.0:gameType:I rule:1:15.0:Easy:
+JosEasy:3:6.0:Easy:JosNormal:9:12.0:Normal:JosHard:11:25.0:Hard:

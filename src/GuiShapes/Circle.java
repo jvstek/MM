@@ -1,7 +1,4 @@
 package GuiShapes;
-//File   : Circle.java - Stores and draws a circle.
-
-//Purpose: Shows a simple class that saves and draws a circle.
 
 import java.awt.Color;
 import java.awt.Graphics;

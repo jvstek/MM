@@ -14,7 +14,7 @@ public abstract class MasterMind implements IMasterMind {
 	protected ICheckScore ICS;
 	protected MasterMindSettings mms; // = new MasterMindSettings(7, 4, 10, 1,
 										// (float) 0, 1, 3);
-	protected SetSecret sus = new SetSecret();
+	protected SetSecret SecretSetter = new SetSecret();
 	protected List<Integer> SecretCode;
 
 	@Override

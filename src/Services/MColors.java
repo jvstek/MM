@@ -26,8 +26,6 @@ public enum MColors {
 		return color;
 	}
 
-	// public static int GetColorNumberFromColor(Color color) { return
-	// map.get(color) ; }
 	public static MColors GetMColor(int ColorNumber) {
 		return (MColors) map.get(ColorNumber);
 	}

@@ -3,14 +3,16 @@ package ruleSettings;
 import Services.MColors;
 
 public class CSRandom implements ICheckScore {
-
+	// think of a better way to do the chekcs...
 	private boolean[] secretChecked;
+	private boolean[]pinSet;
 	private int[] result;
 	private int place; // used for easily placing a pin. without needing to
 						// check where the last pin is placed.
 
 	public CSRandom(int placesInRow) {
 		secretChecked = new boolean[placesInRow];
+		pinSet= new boolean[placesInRow];
 		result = new int[placesInRow];
 		place = 0;
 	}
@@ -24,16 +26,18 @@ public class CSRandom implements ICheckScore {
 	}
 
 	private void prepareCheck() {
-		CleanCheckList(secretChecked);
+		CleanBoolList(secretChecked);
+		CleanBoolList(pinSet);
 		CleanResultList(result);
+		
 		place = 0;
 	}
 
-	private void CleanCheckList(boolean[] checked) {
+	private void CleanBoolList(boolean[] boollist) {
 		int place = 0;
 		int length = result.length;
 		while (place < length) {
-			checked[place] = false; // set default false
+			boollist[place] = false; // set default false
 			place++;
 		}
 	}
@@ -53,6 +57,7 @@ public class CSRandom implements ICheckScore {
 			int g = 0;
 			for (int s : secret) {
 				if (attempt[i] == s && i == g) {
+					pinSet[g] = true; 
 					secretChecked[g] = true;
 					result[place] = MColors.black.GetColorNumber();
 					place++;
@@ -66,7 +71,8 @@ public class CSRandom implements ICheckScore {
 		for (int i = 0; i < attempt.length; i++) {
 			int g = 0;
 			for (int s : secret) { 
-				if (attempt[i] == s && secretChecked[g] == false) {
+				if (attempt[i] == s && secretChecked[g] == false && pinSet[i] == false) {
+					pinSet[i] = true; 
 					secretChecked[g] = true;
 					result[place] = MColors.white.GetColorNumber();
 					place++;

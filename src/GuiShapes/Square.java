@@ -7,10 +7,10 @@ import java.awt.Point;
 
 public class Square extends Shape {
 
-	int height;
-	int width;
-	float minDrawCheck = (float) 0.73 * 100;
-	float maxDrawCheck = (float) 1.50 * 100;
+	private int height;
+	private int width;
+	private float minDrawCheck = (float) 0.73 * 100;
+	private float maxDrawCheck = (float) 1.50 * 100;
 	private Color color;
 	private boolean hover = false;
 

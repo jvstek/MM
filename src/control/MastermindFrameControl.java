@@ -12,13 +12,13 @@ import guiPanels.MastermindPanel;
 import guiPanels.ScoreBoard; 
 
 public class MastermindFrameControl extends JFrame {
-	String title = "Game";
-	MastermindControl MmA;
-	int frameSizeX = 550; //todo make the width depending on amount in a row
-	int frameSizeY = 800; ////todo make the heigth depending on amount in a row
-	JPanel[] panels;
-	MastermindPanel MmP; 
-	OISound sound;
+	private String title = "Game";
+	private MastermindControl MmA;
+	private int frameSizeX = 550; //todo make the width depending on amount in a row
+	private int frameSizeY = 800; ////todo make the heigth depending on amount in a row
+	private JPanel[] panels;
+	private MastermindPanel MmP; 
+	private OISound sound;
 	public MastermindFrameControl(MastermindControl MmA) {
 		this.setTitle(title);
 		this.MmA = MmA;
@@ -65,7 +65,7 @@ public class MastermindFrameControl extends JFrame {
 	}
 
 	public void MenuScoreClicked() {
-		sound.playSound(0);
+		sound.playSound(1);
 		panels[1] = new ScoreBoard(); //stil needfixing. 
 		add(panels[1]);
 		showPanelNumber(1, panels);

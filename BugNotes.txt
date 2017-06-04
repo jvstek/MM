@@ -1,12 +1,11 @@
 Todo list
-Make panel changes smoother. 
+Make panel changes better* + scoreboard Prettier. 
+fixbugs
 proper use of different style game modes.  Make it more flexible.  Put it in prefixed file. (all game modes with game settings) ? 
 (all the modusses in a array... so it is stil compareble...+ need to make game bar more flexible thing of a logic to assign hotkeys)  in other words implement custom(advanced)
 Is doable.... 
-Make a prettier sound serive
-Consistent same style name giving. (other people like that)
-
-Final 
+Make a prettier sound service (give sound location in the constructor or something)
+Consistently same style name giving. (other people like that stuf)  
 
 bug notes
 When mmpanel was set on visible false it doest resize anymore. 

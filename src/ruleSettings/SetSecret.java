@@ -33,7 +33,7 @@ public class SetSecret {
 //		for (Integer secies : SecretCodeList) {
 //			System.out.print(secies);
 //		}
-//		System.out.println();
+		System.out.println();
 		return SecretCodeList;
 	}
 

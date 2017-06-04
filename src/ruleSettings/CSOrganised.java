@@ -59,7 +59,7 @@ public class CSOrganised implements ICheckScore {
 		for (int i = 0; i < attempt.length; i++) {
 			int g = 0;
 			for (int s : secret) {
-				if (attempt[i] == s && secretChecked[g] == false) {
+				if (attempt[i] == s && secretChecked[g] == false &&result[i] ==MColors.gray.GetColorNumber()) {
 					secretChecked[g] = true;
 					result[i] =MColors.white.GetColorNumber();
 				}

@@ -11,7 +11,7 @@ import GuiShapes.Square;
 import GuiShapes.Unknown;
 
 public class MasterMindSetup {
-	//Todo Debug with increasing row numbers they eventually cros? 
+	//Todo Debug with increasing row numbers they eventually intersect?
 	// set up information
 	private int xPosition = 80; // starting position of x
 	private int yPostion = 120; // starting position of y

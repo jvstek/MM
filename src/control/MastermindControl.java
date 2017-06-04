@@ -22,9 +22,9 @@ public class MastermindControl {
 	// shows gives list to api to be draw
 	// multiple list it might remove my bugs
 
-	ArrayList<IShape> canvasShapes;
-	MasterMindSetup mms;
-	IMasterMind imm;
+	private ArrayList<IShape> canvasShapes;
+	private MasterMindSetup mms;
+	private IMasterMind imm;
 	private int activeRow;
 	private int activePlace;
 	private int colorNumber;

@@ -25,7 +25,11 @@ public enum MColors {
 	public Color GetColor() {
 		return color;
 	}
-
+/**
+ * Get a color according to a int from that color
+ * @param ColorNumber
+ * @return
+ */
 	public static MColors GetMColor(int ColorNumber) {
 		return (MColors) map.get(ColorNumber);
 	}
@@ -35,7 +39,11 @@ public enum MColors {
 			map.put(mColor.GetColorNumber(), mColor);
 		}
 	}
-
+/**
+ * Get a int according to the color from that int. 
+ * @param Color
+ * @return
+ */
 	public static MColors GetMNumber(Color Color) {
 		return (MColors) map.get(Color);
 	}

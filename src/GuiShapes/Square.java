@@ -41,7 +41,13 @@ public class Square extends Shape {
 			g.drawString("Check", ox + (w / 7), oy + (h / 2));
 		}
 	}
-
+	/**
+	 * The string doesnt grow or decrease in size so it wil hide when it gets to little for the square
+	 * or to big for the square. 
+	 * @param sizeY
+	 * @param sizeX
+	 * @return
+	 */
 	private boolean drawCheckString(float sizeY, float sizeX) {
 
 		if (sizeY > minDrawCheck && sizeX > minDrawCheck) {
@@ -51,7 +57,10 @@ public class Square extends Shape {
 		}
 		return false;
 	}
-
+/**
+ * checks if there is a collision
+ * note you can also use check area
+ */
 	@Override
 	public boolean HasCollision(double coordinateX, double coordinateY, float sizeY, float sizeX) {
 		float ox = Calculate(x, sizeX);

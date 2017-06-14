@@ -12,22 +12,22 @@ import guiPanels.MastermindPanel;
 import guiPanels.ScoreBoard; 
 
 public class MastermindFrameControl extends JFrame {
-	private String title = "Game";
-	private MastermindControl MmA;
+	private String title = "Game"; // title of the frame
+	private MastermindControl MmA; // master mind controler that decides what is being showed on the frame
 	private int frameSizeX = 550; //todo make the width depending on amount in a row
 	private int frameSizeY = 800; ////todo make the heigth depending on amount in a row
-	private JPanel[] panels;
-	private MastermindPanel MmP; 
-	private OISound sound;
+	private JPanel[] panels;// used for panels being showed
+	private MastermindPanel MmP; // panel where master mind game is being showed
+	private OISound sound; // sound service
 	public MastermindFrameControl(MastermindControl MmA) {
 		this.setTitle(title);
 		this.MmA = MmA;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setJMenuBar(new GameBar().GameMenubar(this));
+		setJMenuBar(new GameBar().GameMenubar(this)); // sets the game bar
 		panels = new JPanel[2];
 		MmP = new MastermindPanel(MmA, frameSizeX, frameSizeY);
 		panels[0] = MmP;
-		panels[1] = new ScoreBoard(); // think of a better way to do this. 
+		panels[1] = new ScoreBoard(); // todo make a better way to to this
 		add(MmP);
 		this.setSize(frameSizeX, frameSizeY);
 		setVisible(true);
@@ -35,6 +35,11 @@ public class MastermindFrameControl extends JFrame {
 	}
 
 	// can also create a method for each menu item....
+	/**
+	 * The game bar menu items speak to this code when a action is performed. 
+	 * so it can start the game and refresh the panels so the new game is being showed. 
+	 * @param e
+	 */
 	public void MenuItemClicked(ActionEvent e) {
 		if (e.getSource() instanceof JMenuItem) {
 			JMenuItem source = (JMenuItem) (e.getSource());
@@ -63,7 +68,9 @@ public class MastermindFrameControl extends JFrame {
 			System.out.println("some other action  ");
 		}
 	}
-
+	/**
+	 * when the score menu is "clicked" or hovered over. 
+	 */
 	public void MenuScoreClicked() {
 		sound.playSound(1);
 		panels[1] = new ScoreBoard(); //stil needfixing. 
@@ -71,7 +78,9 @@ public class MastermindFrameControl extends JFrame {
 		showPanelNumber(1, panels);
 
 	}
-
+	/**
+	 * When in the menubar "game" is clicked or hovered over. It performs this piece ofcode
+	 */
 	public void MenuGameClicked() {
 		showPanelNumber(0, panels);
 	}
@@ -84,7 +93,12 @@ public class MastermindFrameControl extends JFrame {
 		}
 		return false;
 	}
-
+	/**
+	 * When depending on the given parameters is puts that panel visible and the rest are hidden. 
+	 * (made so it is scalable) 
+	 * @param panelNumber
+	 * @param panels
+	 */
 	private void showPanelNumber(int panelNumber, JPanel[] panels) {
 		
 		for (int i = 0; i < panels.length; i++) {

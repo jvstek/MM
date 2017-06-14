@@ -3,7 +3,9 @@ package Services;
 import java.util.Comparator;
 
 public class ScoreBoardSorter implements Comparator<ScoreBoardRow> {
-
+/**
+ * Comparible to organise it in the scoreboard
+ */
 	@Override
 	public int compare(ScoreBoardRow o1, ScoreBoardRow o2) {
 		 if(o1.GetAttempts()<o2.GetAttempts()){return 1;}

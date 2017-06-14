@@ -11,10 +11,10 @@ public class Game {
 
 	public static void createGameFrame() {
 
-		MastermindControl mmA = new MastermindControl("test");
+		MastermindControl mmA = new MastermindControl();
 		MastermindFrameControl masterMindFrame = new MastermindFrameControl(mmA);
 	}
-
+	
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -23,6 +23,4 @@ public class Game {
 			}
 		});
 	}
-	// mastermind + settings
-
 }

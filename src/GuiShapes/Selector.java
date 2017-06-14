@@ -10,6 +10,11 @@ public class Selector extends Circle {
 		super(center, radius, color); 
 	}
 
+	/**
+	 * Drawing pin on the field
+	 * It is a little bit different because when the pin is selected it needs to be drawn a differently 
+	 * Todo change it in the hover method so the way the circle is drawn is stil the same.
+	 */
 	@Override
 	public void Draw(Graphics g, float sizeY, float sizeX) {
 		g.setColor(color);
@@ -23,12 +28,7 @@ public class Selector extends Circle {
 		} else {
 			g.fillOval(ox, oy, diameterx, diametery);
 		}
-	}
-
-	@Override
-	public void OnHover() {
-		// todo this is a color to select fil in a pin
-	}
+	} 
 
 	public Color GetColor() {
 		return this.color;

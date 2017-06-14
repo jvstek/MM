@@ -9,28 +9,39 @@ import GuiShapes.ScorePin;
 import GuiShapes.Selector;
 import GuiShapes.Square;
 import GuiShapes.Unknown;
-
+/**
+ * 
+ * @author jvs
+ *This Clas creates the field shapes that are shown when a new game is started. 
+ */
 public class MasterMindSetup {
 	//Todo Debug with increasing row numbers they eventually intersect?
-	// set up information
+	// set up information 
 	private int xPosition = 80; // starting position of x
 	private int yPostion = 120; // starting position of y
 
 	private int playFieldPinMargin = 8; // space between circles
-	private int playFieldPinSize = 23; // size of the circles on the playfield
+	private int playFieldPinSize = 23; // size of the circles on the playfield 
+	// these are the base scores the rest is based upon. 
 
-	private double ScoreSizeDifference = 0.5;
+	private double ScoreSizeDifference = 0.5;//different sizes between the circle
 	private double playFieldScoreMargin = playFieldPinMargin * ScoreSizeDifference;
 	private double playFieldScoreSize = playFieldPinSize * ScoreSizeDifference;
 
-	private double SelectorSizeDifference = 1.3;
+	private double SelectorSizeDifference = 1.3;//different sizes between the circle
 	private double playFieldSelectorMargin = playFieldPinMargin * SelectorSizeDifference;
 	private double playFieldSelectorSize = playFieldPinSize * SelectorSizeDifference;
 
-	private double SecretSizeDifference = 1.3;
+	private double SecretSizeDifference = 1.3;//different sizes between the circle
 	private double playFieldSecretMargin = playFieldPinMargin * SecretSizeDifference;
 	private double playFieldSecretSize = playFieldPinSize * SecretSizeDifference;
-
+/**
+ * 1 methodes to create start creating all the row and circles that are being shown when playing a game
+ * @param RowLength
+ * @param MaxAttempts
+ * @param ColorAmount
+ * @return
+ */
 	public ArrayList<IShape> FieldSetup(int RowLength, int MaxAttempts, int ColorAmount) {
 		ArrayList<IShape> field = new ArrayList<IShape>();
 		field.addAll(SetPlayFieldPin(RowLength, MaxAttempts));
@@ -73,7 +84,11 @@ public class MasterMindSetup {
 		SelectorShapes.add(check);
 		return SelectorShapes;
 	}
-
+	/**
+	 * Set the row of unknown secrets
+	 * @param RowLength
+	 * @return
+	 */
 	public ArrayList<IShape> SetUnknownSecret(int RowLength) {
 		ArrayList<IShape> SecretShapes = new ArrayList<IShape>();
 
@@ -86,7 +101,9 @@ public class MasterMindSetup {
 		}
 		return SecretShapes;
 	}
-
+	/**
+	 * loop to go through the rows
+	 */
 	private ArrayList<IShape> SetPinRows(int RowLength, int RowAmount, int x, int y) {
 		ArrayList<IShape> rowshapes = new ArrayList<IShape>();
 		int row = 0;
@@ -98,7 +115,13 @@ public class MasterMindSetup {
 		}
 		return rowshapes;
 	}
-
+	/**
+	 * setpins in 1 row
+	 * @param RowLength
+	 * @param OfSet
+	 * @param row
+	 * @return
+	 */
 	private ArrayList<IShape> SetPinRow(int RowLength, Point OfSet, int row) {
 		ArrayList<IShape> rowshapes = new ArrayList<IShape>();
 		int x = (int) OfSet.getX();
@@ -114,7 +137,9 @@ public class MasterMindSetup {
 		}
 		return rowshapes;
 	}
-
+/**
+ * loop to go through the rows
+ */
 	private ArrayList<IShape> SetScoreRows(int RowLength, int RowAmount, Point OfSet) {
 		ArrayList<IShape> rowshapes = new ArrayList<IShape>();
 		int x = (int) OfSet.getX();
@@ -127,7 +152,13 @@ public class MasterMindSetup {
 		}
 		return rowshapes;
 	}
-
+/**
+ * set scorepins in 1 row
+ * @param RowLength
+ * @param OfSet
+ * @param row
+ * @return
+ */
 	private ArrayList<IShape> SetScoreRow(int RowLength, Point OfSet, int row) {
 		ArrayList<IShape> rowshapes = new ArrayList<IShape>();
 		int x = (int) OfSet.getX();

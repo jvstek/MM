@@ -3,6 +3,7 @@ package GuiShapes;
 import java.awt.Point;
 
 public abstract class Shape implements IShape {
+	// basic variables that all shapes need
 	public int x;
 	public int y;
 

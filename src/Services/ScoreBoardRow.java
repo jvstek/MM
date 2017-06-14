@@ -1,5 +1,9 @@
 package Services;
-
+/**
+ * 
+ * @author jvs
+ * Scoreboard rowclas that is used to show a row on the scoreboard 
+ */
 public class ScoreBoardRow {
 	// name // score //mode //time (when there is time)
 	private String Name;

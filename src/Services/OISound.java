@@ -18,7 +18,10 @@ public class OISound {
 	public OISound() {
 		sounds = listFilesForFolder(folder);
 	}
-
+/**
+ * Only plays mp3's. 
+ * @param soundNr
+ */
 	public void playSound(int soundNr)  {
 		
 		 try {
@@ -40,7 +43,12 @@ public class OISound {
 			 
 		 
 	}
-
+/**
+ * Reads all the files of a folder 
+ * Todo check if it is a sound file before adding it to the list? 
+ * @param folder
+ * @return
+ */
 	public static ArrayList<File> listFilesForFolder(File folder) {
 		ArrayList<File>  sounds = new ArrayList<File>();
 		for (final File fileEntry : folder.listFiles()) {

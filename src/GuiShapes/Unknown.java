@@ -12,11 +12,6 @@ public class Unknown extends Circle {
 		this.place = place;
 	}
 
-	@Override
-	public void OnHover() {
-		// todo this circle represents 1 pin of the unknown secret code the AI
-	}
-
 	public void SetColor(Color color) {
 		this.color = color;
 	}

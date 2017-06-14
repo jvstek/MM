@@ -13,15 +13,16 @@ public class SetSecret {
 	private Random rand = new Random();
 	private Integer until = 0;
 	private Integer secret = 0;
-
+	/**
+	 * Create random secret numbers  (that represent colors) 
+	 * 
+	 * @param AmountOfSecretRow
+	 * @param MaximumSameSecretsAllowed
+	 * @param AmountOfColors
+	 * @return
+	 */
 	public List<Integer> SetSecretCode(Integer AmountOfSecretRow, Integer MaximumSameSecretsAllowed,
 			Integer AmountOfColors) {
-		// Iterator<Integer> SecretCodeList = (Iterator<Integer>) new // better
-		// to create arrays and stuff outside the methods
-		// if (MaximumSameSecretsAllowed<1){MaximumSameSecretsAllowed =
-		// 1;}//checking funny business?
-		// while loop until the secret code list contains as much elements as
-		// the row allows
 		while (until < AmountOfSecretRow) {
 			secret = rand.nextInt(AmountOfColors);
 			if (AddSecretAllowed(MaximumSameSecretsAllowed, SecretCodeList, secret)) {
@@ -32,11 +33,18 @@ public class SetSecret {
 		}
 //		for (Integer secies : SecretCodeList) {
 //			System.out.print(secies);
-//		}
-		System.out.println();
+//		} 
+//		System.out.println();
+		// show this code so the result is printed in the console
 		return SecretCodeList;
 	}
-
+	/**
+	 * Tell if the secret is allowed in the list. provided by the given parameters 
+	 * @param MaximumSameAllowed
+	 * @param GivenSecretCodeList
+	 * @param SecretToAdd
+	 * @return
+	 */
 	private boolean AddSecretAllowed(Integer MaximumSameAllowed, List<Integer> GivenSecretCodeList,
 			Integer SecretToAdd) {
 		if (GivenSecretCodeList.size() < MaximumSameAllowed) {
@@ -47,12 +55,12 @@ public class SetSecret {
 			// check if the value to add is the same as the current value
 			if (temp == SecretToAdd) {
 				// if the value is the same check if the amount doesn't exceed
-				// the max amount of the Same
+				// the max amount allowed
 				if ((Collections.frequency(GivenSecretCodeList, temp) + 1) > MaximumSameAllowed) {
-					return false;
+					return false; // if it exceeds return false
 				}
 			}
 		}
-		return true;
+		return true; // return true;
 	}
 }

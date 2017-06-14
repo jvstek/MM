@@ -14,7 +14,11 @@ public class Pin extends Circle {
 		this.row = row;
 		this.place = place; 
 	}
-
+	/**
+	 * Drawing pin on the field
+	 * It is a little bit different because when the pin is selected it needs to be drawn a differently 
+	 * Todo change it in the hover method so the way the circle is drawn is stil the same.
+	 */
 	@Override
 	public void Draw(Graphics g, float sizeY, float sizeX) {
 		g.setColor(color);
@@ -29,12 +33,7 @@ public class Pin extends Circle {
 			g.fillOval(ox, oy, diameterx, diametery);
 		}
 	}
-
-	@Override
-	public void OnHover() {
-		// work in progress pin that needs to geus the secret pin
-	}
-
+	// what to do when a pin is selected 
 	public boolean SetSelected(boolean select) {
 		selected = select;
 		return selected;

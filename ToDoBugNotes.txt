@@ -1,0 +1,34 @@
+Todo list aka my stories
+Make panel changes better* 
+
+ scoreboard labels Prettier.
+ Redesign Gui. Selectors get there own panel and stuff
+
+ Fixes in Scoreboard / saving game. So you dont need to reload ALL the information the whole time. 
+proper use of different style game modes.  Make it more flexible.  Put it in prefixed file. (all game modes with game settings) ? 
+(all the modusses in a array... so it is stil compareble...+ need to make game bar more flexible thing of a logic to assign hotkeys)  in other words implement custom(advanced)
+Is doable.... 
+
+Make a prettier sound service (give sound location in the constructor or something)
+
+Make abstract for checkscore. 
+
+fixbugs
+
+add functionality
+
+Create more classes for methodes that make there own function. (selection helper, next row /cheker,  game starters . 
+
+Decide when it is needed to do that what is the limet on when you do it and when not to do it	
+
+Consistently same style name giving. (other people like that stuf)   
+Write full variabele names. (dont use short cuts even when it is obvious what the variable name is)
+
+bug notes
+When mmpanel was set on visible false it doest resize anymore. 
+Make height and width from frame dependeble on row count when making a new game. (or organize it with more panels aka redesign gui) 
+When increasing the row the shapes come closer and closer together. 
+If the program is open multiple times it gives problems with the score.
+
+impedements 
+Time vs relevance

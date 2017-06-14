@@ -10,12 +10,7 @@ public class ScorePin extends Circle {
 	public ScorePin(Point center, int radius, Color color, int row, int place) {
 		super(center, radius, color);
 		this.row = row;
-		this.place = place; 
-	}
-
-	@Override
-	public void OnHover() {
-		// todo this is a score pin representing a certain score
+		this.place = place; 	
 	}
 
 	public int GetRow() {

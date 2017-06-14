@@ -51,7 +51,15 @@ public class MasterMindSettings {
 		}
 		return false;
 	}
-
+	/**
+	 * Provides minimum requirements of a mastermind game 
+	 * Work to make it more dynamic and 
+	 * @param PlayColors
+	 * @param RowLength
+	 * @param MaxAttempt
+	 * @param SameColorAllowed
+	 * @return
+	 */
 	private boolean settingCheck(int PlayColors, int RowLength, int MaxAttempt, int SameColorAllowed) {
 		if (PlayColors < 3 || PlayColors > 7) {
 			return false;

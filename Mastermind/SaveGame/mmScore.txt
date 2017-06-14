@@ -1,1 +1,3 @@
-JosEasy:3:6.0:Easy:JosNormal:9:12.0:Normal:JosHard:11:25.0:Hard:
+JosEasy:3:6.0:Easy:
+JosNormal:9:12.0:Normal:
+JosHard:11:25.0:Hard:

@@ -5,9 +5,10 @@ import java.awt.Graphics;
 import java.awt.Point;
 
 public abstract class Circle extends Shape {
+	// the variables that all the circles need
 	public int diameter;
 	public int radius;
-	public boolean hover;
+	public boolean hover; 
 	protected Color color;
 
 	public Circle(Point center, int radius, Color color) {
@@ -32,14 +33,14 @@ public abstract class Circle extends Shape {
 			OnHover();
 		}
 	}
-
-	// problem with the points because of the canvas not being the frame... it
-	// needs a recalculation
+	/**
+	 * Checks if there is a collision. depending on the coordinates. Size y and x are the present frame sizes
+	 * For further details in how you calculate a circle collision check 
+	 * https://gamedevelopment.tutsplus.com/tutorials/when-worlds-collide-simulating-circle-circle-collisions--gamedev-769
+	 * Note* area could also have been used. To make it easier
+	 */
 	@Override
 	public boolean HasCollision(double coordinateX, double coordinateY, float sizeY, float sizeX) {
-		// Ellipse2D.Double test = new Ellipse2D.Double();//to easy
-		// test.setFrame()
-		// test.contains(p)
 		float ox = Calculate(x, sizeX);
 		float oy = Calculate(y, sizeY);
 		float radiusx = Calculate(radius, sizeX);
@@ -59,7 +60,12 @@ public abstract class Circle extends Shape {
 		}
 		return hover;
 	}
-
+	/**
+	 * Calculates the growing percentage so it can be used 
+	 * @param base
+	 * @param size
+	 * @return
+	 */
 	public float Calculate(double base, float size) {
 		return (float) (base * size) / 100;
 	}
